@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+  .cards {
+    background-color: black;
+    text-align: center; /* Center align text */
+    padding-bottom: 50px; /* Add padding for spacing */
+  }
+  
+  h1 {
+    
+    margin: 10px; /* Adjust margin */
+    padding-bottom: 50px;
+    color: rgb(223, 112, 130);
+    font-size: 50px;
+  }
+
+  .box {
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    float: left;
+    transition: opacity 0.3s ease;
+  }
+  
+  /* Define colors for each box */
+  .box:nth-child(1) {
+    background-color: #ff6347; /* Tomato */
+  }
+  
+  .box:nth-child(2) {
+    background-color: #ffa500; /* Orange */
+  }
+  
+  .box:nth-child(3) {
+    background-color: #ffd700; /* Gold */
+  }
+  
+  .box:nth-child(4) {
+    background-color: #98fb98; /* PaleGreen */
+  }
+  
+  /* Hover effect */
+  .box:hover {
+    opacity: 1; /* When hovering over a box, it remains fully opaque */
+  }
+  
+  .box:not(:hover) {
+    opacity: 0.7; /* Boxes that are not hovered over fade a little */
+  }
+</style>
+</head>
+<body>
+
+<div class="cards">
+  <h1>CARDS</h1>
+  <div class = "boxes">
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+</div>
+</div>
+
+</body>
+</html>

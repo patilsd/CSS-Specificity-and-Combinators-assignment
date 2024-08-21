@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meesho Header</title>
+    <script src="https://kit.fontawesome.com/8b6c95fcc2.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            margin: auto;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #7D0650;
+            margin-right: 20px;
+        }
+
+        .search-bar img {
+            width: 20px;
+            height: 15px;
+        }
+
+        .search-bar {
+            flex-grow: 1;
+            margin-right: 100px;
+            width: 100px;
+        }
+
+        .links {
+            float: right;
+            margin-top: 10px;
+        }
+
+        .links span {
+            cursor: pointer;
+            margin-right: 40px;
+        }
+
+        .links span>img {
+            width: 20px;
+            height: 20px;
+        }
+
+        .links span:not(:last-child):not(:nth-child(4))::after {
+            content: "|";
+            margin-left: 10px;
+            color: #333;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding-left: 30px;
+            background-image: url('search_icon.png');
+            background-size: 20px;
+            background-repeat: no-repeat;
+            background-position: 5px center;
+            font-size: 14px;
+        }
+        .Variety span{
+            padding-top:20px;
+            padding-bottom:20px;
+        }
+
+        .Variety ul {
+            display: flex;
+            justify-content: space-around;
+            background-color: #fff;
+            border-bottom: 3px solid #ddd;
+            padding-bottom: 15px;
+        }
+
+        .product-filters {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 300px;
+
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .sort-by {
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .sort-by label {
+            margin-right: 10px;
+        }
+
+        #sort {
+            border: none;
+        }
+
+        .filters {
+            padding-top: 10px;
+        }
+
+        .filters h2 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .filters p {
+            margin: 5px 0 15px;
+            color: #888;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+            font-size: 10px;
+        }
+
+        .category h3 {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        #search {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul li {
+            margin-bottom: 15px;
+            font-weight: 15px;
+            color: #777373;
+        }
+
+        ul li label {
+            margin-left: 5px;
+        }
+
+        .img-body {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .product-card {
+
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin: 0px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            height: auto;
+            gap: 10px;
+            max-width: 1200px;
+            padding: 0px;
+        }
+
+        .product-img {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .lower-img {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .product-img img {
+            width: 100%;
+            height: 50%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .product-card .content {
+            padding: 15px;
+        }
+
+        .product-card .title {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .product-card .price {
+            font-size: 20px;
+            color: #ff5722;
+            font-weight: bold;
+        }
+
+        .product-card .free-delivery {
+            color: green;
+            margin: 10px 0;
+        }
+
+        .product-card .rating {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .product-card .rating span {
+            display: inline-block;
+            margin-left: 5px;
+        }
+
+        .product-card .rating .reviews {
+            color: #555;
+        }
+
+        .rating .stars {
+            color: #fff;
+            background-color: #4caf50;
+            padding: 5px 8px;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                meesho
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Try Saree, Kurti or Search by Product Code">
+            </div>
+            <div class="links">
+                <span><i class="fa-solid fa-mobile" style="color: #000000;"></i> Download App</span>
+                <span>Become a Supplier</span>
+                <span>Newsroom</span>
+                <i class="fa-regular fa-user"></i>
+                <span>Profile</span>
+                <i class="fa-solid fa-cart-shopping" style="color: #7e96be;"></i>
+                <span>cart</span>
+            </div>
+        </nav>
+    </header>
+    <div class="Variety">
+        <ul>
+            <span>Women Ethnic</span>
+            <span>Women Western</span>
+            <span>Men</span>
+            <span>Kids</span>
+            <span>Home & Kitchen</span>
+            <span>Beauty & Health</span>
+            <span>Jewellery & Accessories</span>
+            <span>Bags & Footwear</span>
+            <span>Electronics</span>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="Product-list">
+            <div class="product-filters">
+                <h1>Products For You</h1>
+                <div class="sort-by">
+                    <label for="sort">Sort by :</label>
+                    <select id="sort">
+                        <option value="relevance">Relevance</option>
+
+                    </select>
+                </div>
+                <div class="filters">
+                    <h2>FILTERS</h2>
+                    <p>1000+ Products</p>
+                    <div class="category">
+                        <h1> Category </h1>
+                        <input type="text" id="search" placeholder="Search">
+                        <ul>
+                            <li><input type="checkbox" id="women-tshirts"><label for="women-tshirts"> Women
+                                    T-shirts</label></li>
+                            <li><input type="checkbox" id="women-tops"><label for="women-tops"> Women Tops And
+                                    Tunics</label></li>
+                            <li><input type="checkbox" id="bedsheets"><label for="bedsheets"> Bedsheets</label></li>
+                            <li><input type="checkbox" id="bike-covers"><label for="bike-covers"> Bike Covers</label>
+                            </li>
+                            <li><input type="checkbox" id="blouses"><label for="blouses"> Blouses</label></li>
+                            <li><input type="checkbox" id="cups-mugs"><label for="cups-mugs"> Cups & Mugs</label></li>
+                            <li><input type="checkbox" id="dupattas"><label for="dupattas"> Dupattas</label></li>
+                            <li><input type="checkbox" id="earrings"><label for="earrings"> Earrings & Studs</label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-img">
+                <img src="https://images.meesho.com/images/products/22304983/deqa0_512.webp" alt="Product Image">
+                <div class="content">
+                    <div class="title">Trendy Alluring Women B...</div>
+                    <div class="price">₹133 onwards</div>
+                    <div class="free-delivery">Free Delivery</div>
+                    <div class="rating">
+                        <div class="stars">3.7</div>
+                        <span class="reviews">43503 Reviews</span>
+                    </div>
+                </div>
+            </div>
+            <div class="product-img">
+                <img src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTzFAezf6VGRK-BXc25dgJVcpkPZPT5FEmq95Ktl17LV3553YI6"
+                    alt="Product Image">
+                <div class="content">
+                    <div class="title">Trendy Alluring Women B...</div>
+                    <div class="price">₹133 onwards</div>
+                    <div class="free-delivery">Free Delivery</div>
+                    <div class="rating">
+                        <div class="stars">3.7</div>
+                        <span class="reviews">43503 Reviews</span>
+                    </div>
+                </div>
+            </div>
+            <div class="product-img">
+                <img src="https://rukminim2.flixcart.com/image/832/832/xif0q/t-shirt/g/q/l/m-new-defender-latest-true-basket-original-imahfepbkgrh7c7f.jpeg?q=70&crop=false"
+                    alt="Product Image">
+                <div class="content">
+                    <div class="title">Trendy Alluring Women B...</div>
+                    <div class="price">₹133 onwards</div>
+                    <div class="free-delivery">Free Delivery</div>
+                    <div class="rating">
+                        <div class="stars">3.7</div>
+                        <span class="reviews">43503 Reviews</span>
+                    </div>
+                </div>
+            </div>
+            <div class="product-img">
+                <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRDkMkLdhYwUy_00YHya3NMsjc7H1Axlw7s5Ny9-QPy4OWh27Y-"
+                    alt="Product Image">
+                <div class="content">
+                    <div class="title">Trendy Alluring Women B...</div>
+                    <div class="price">₹133 onwards</div>
+                    <div class="free-delivery">Free Delivery</div>
+                    <div class="rating">
+                        <div class="stars">3.7</div>
+                        <span class="reviews">43503 Reviews</span>
+                    </div>
+                </div>
+            </div>
+            <div class="lower-img">
+                <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRDkMkLdhYwUy_00YHya3NMsjc7H1Axlw7s5Ny9-QPy4OWh27Y-"
+                    alt="Stylish Trendy Women Shorts">
+            </div>
+            <div class="lower-img">
+                <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRDkMkLdhYwUy_00YHya3NMsjc7H1Axlw7s5Ny9-QPy4OWh27Y-"
+                    alt="Stylish Trendy Women Shorts">
+            </div>
+            <div class="lower-img">
+                <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRDkMkLdhYwUy_00YHya3NMsjc7H1Axlw7s5Ny9-QPy4OWh27Y-"
+                    alt="Stylish Trendy Women Shorts">
+            </div>
+            <div class="lower-img">
+                <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRDkMkLdhYwUy_00YHya3NMsjc7H1Axlw7s5Ny9-QPy4OWh27Y-"
+                    alt="Stylish Trendy Women Shorts">
+            </div>
+        </div>
+</body>
+
+</html>
